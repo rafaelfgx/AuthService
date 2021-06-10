@@ -1,0 +1,28 @@
+@model LoggedOutViewModel
+
+@{
+    ViewData["signed-out"] = true;
+}
+
+<div class="lead text-center">
+    <h1>Logout</h1>
+    <p>You are now logged out.</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.PostLogoutRedirectUri))
+    {
+        <a href="@Model.PostLogoutRedirectUri">@Model.ClientName</a>
+    }
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.SignOutIframeUrl))
+{
+    <iframe width="0" height="0" src="@Model.SignOutIframeUrl"></iframe>
+}
+
+@section scripts
+{
+    @if (Model.AutomaticRedirectAfterSignOut)
+    {
+        <script src="~/signout.js"></script>
+    }
+}

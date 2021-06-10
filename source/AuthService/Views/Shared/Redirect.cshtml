@@ -1,0 +1,8 @@
+@model RedirectViewModel
+
+<div class="lead text-center">
+    <h1>You are now being returned to the application. Once complete, you may close this tab.</h1>
+</div>
+
+<meta http-equiv="refresh" content="0;url=@Model.RedirectUrl" data-url="@Model.RedirectUrl">
+<script src="~/signin.js"></script>

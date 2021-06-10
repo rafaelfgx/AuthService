@@ -1,0 +1,11 @@
+@model LogoutViewModel
+
+<div class="lead text-center">
+    <h1>Logout</h1>
+    <p>Would you like to logout?</p>
+
+    <form asp-action="Logout">
+        <input type="hidden" name="logoutId" value="@Model.LogoutId" />
+        <button class="btn btn-primary">Yes</button>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+@model ErrorViewModel
+
+@{
+    var error = Model?.ErrorMessage?.Error;
+    var errorDescription = Model?.ErrorMessage?.ErrorDescription;
+}
+
+<div class="lead text-center">
+    <h1>Error</h1>
+
+    @if (!string.IsNullOrWhiteSpace(error))
+    {
+        <div class="alert alert-danger">
+            <strong>@error</strong>
+
+            @if (!string.IsNullOrWhiteSpace(errorDescription))
+            {
+                <div>@errorDescription</div>
+            }
+        </div>
+    }
+</div>
